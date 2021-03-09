@@ -1,0 +1,736 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }  /*去掉边框、去掉轮廓（比如输入框外面的蓝边框）*/
+
+/*去掉列表前面的圆点*/
+ul, ol {
+    list-style: none;
+}
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}  /*字体一般是指定这两个*/
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*禁止文本输入框在右下角拖拽（因为拖动后会调整输入框大小）*/
+img {border:0;	vertical-align:middle; }  /* 去掉图片底侧默认的3像素空白缝隙*/
+table { border-collapse:collapse; }
+body {
+    font: 12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;
+    color:#666;
+    background:#fff
+}
+
+/*start:清除浮动【推荐此方式进行清除浮动】。左浮动和右浮动都清除了，盒子刚好达到闭合的状态*/
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+/*end：清除浮动*/
+
+a {color:#666; text-decoration:none; }  /*去掉超链接的下划线*/
+a:hover{color:#C81623;} /*鼠标悬停时的颜色*/
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:100%;} /*font-size:100% 的意思是：让它们和父亲一样大，避免在不同的浏览器中显示大小不一致*/
+s,i,em{font-style:normal;text-decoration:none;}  /*去掉i标签和em的斜体，取消s标签的删除线*/
+.col-red{color: #C81623!important;}
+
+/*公共类*/
+.w { /*版心（可视区）。需要专门提取出来 */
+    width: 1210px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.al {
+    text-align: left
+}
+
+.ac {
+    text-align: center
+}
+
+.ar {
+    text-align: right
+}
+
+.hide {
+    display: none
+}
+
+
+
+/*顶部导航start*/
+.shortcut {
+    height: 30px;
+    line-height: 30px;
+    background-color: #f1f1f1;
+    width: 100%;
+}
+
+.dt,
+.shortcut .fore {
+    padding: 0 20px 0 10px;
+    position: relative;
+}
+
+.dt i,
+.fore i {
+    font: 400 15px/15px "宋体";
+    position: absolute;
+    top: 13px;
+    right: 3px;
+    height: 7px;
+    overflow: hidden;
+    width: 15px;
+}
+
+.dt s,
+.fore s {
+    position: absolute;
+    top: -8px;
+    left: 0;
+}
+
+.fr li {
+    float: left;
+    padding: 0 10px;
+}
+
+.fr .line {
+    width: 1px;
+    height: 12px;
+    background-color: #ddd;
+    margin-top: 9px;
+    padding: 0;
+}
+
+.shortcut .tel-jd {
+    padding: 0 20px 0 25px;
+}
+
+.tel {
+    position: absolute;
+    width: 15px;
+    height: 20px;
+    background: url(../images/sprite.png) no-repeat;
+    left: 5px;
+    top: 5px;
+}
+/*顶部导航end*/
+
+/*topbanner start*/
+.topbanner {
+    background-color: rgb(235, 244, 241);
+    height: 70px;
+}
+
+
+
+/*topbanner end*/
+
+.close-button{
+    z-index: 1;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    background: #2d2d2d;
+    width: 20px;
+    height: 20px;
+    text-align: center; 
+    line-height: 20px;
+    opacity: .3;
+    filter: alpha(opacity=30);
+}
+
+.close-button{
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+
+i.close-button{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.pos{
+    font-size: 14px;
+    color: #f10215;
+    margin-right: 4px;
+}
+/*search box*/
+
+
+.seabox{
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    height: 180px;
+    border-bottom: 2px solid #b1191a;
+}
+
+.top-right{
+    position: absolute;
+    left: 300px;
+    top:20px;
+}
+
+.seabox-logo{
+    position: absolute;
+    float: left;
+    width: 362px;
+    height: 170px;
+}
+
+
+.seabox-input{
+    float: left;
+    height: 36px;
+    padding-top: 25px;
+}
+
+.seabox-input input{
+    float: left;
+    width: 450px;
+    height: 32px;
+    padding-left: 5px;
+    margin-left: -10px;
+    border: 2px solid #B61D1D;
+    border-right: 0;
+    font: 400 14px/32px "microsoft yahei";
+    color: rgb(153, 153, 153);
+}
+
+.seabox-input button {
+    width: 82px;
+    height: 36px;
+    color: #fff;
+    float: left;
+    font: 400 16px/36px "微软雅黑";
+    background-color: #B61D1D;
+    cursor: pointer;
+}
+
+.seabox-car{
+    position: relative;
+    width: 96px;
+    height: 34px;
+    float:right;
+    line-height: 34px;
+    padding-left: 43px;
+    margin: 25px 65px 0 0;
+    border: 1px solid #DFDFDF;
+    background-color: #F9F9F9;
+    right: 100px;
+}
+
+.seabox-car a{
+    padding-left: 5px;
+    color: #C81623;
+}
+
+.icon1 {
+    position: absolute;
+    top: 10px;
+    left: 13px;
+    width: 18px;
+    height: 16px;
+    background: url('../figures/sprite.png') no-repeat 0 -58px;
+}
+.icon2 {
+    position: absolute;
+    top: 1px;
+    left: 26px;
+    width: 16px;
+    height: 14px;
+    background-color: #C81623;
+    line-height: 14px;
+    text-align: center;
+    color: #fff;
+    border-radius: 6px 6px 6px 6px;  /*画圆角矩形*/
+}
+
+.search-moreAlink {
+    float: left;
+    width: 530px;
+    height: 28px;
+    line-height: 28px;
+}
+.search-moreAlink a {
+    margin-right: 8px;
+}
+
+.lat{
+    position: absolute;
+    bottom: 0;
+    left: 270px;
+}
+
+.seabox-lat {
+    float: left;
+    line-height: 40px;
+    
+    top: 220px;
+    left: 500px;
+    height: 40px;
+    padding-top: 10px;
+    
+}
+
+.seabox-lat a{
+    margin-right: 11px;
+    font-size: 15px;
+}
+
+
+
+/* 中部 */
+
+.nav{
+    margin-top:10px;
+}
+
+.nav a{
+    line-height: 25px;
+    font-size: 14px;
+    color: #333;
+}
+
+.nav span{
+    font-size: 12px;
+}
+
+
+.main-slider {
+    position: absolute;
+    float: left;
+    margin: -390px 0px 0px 220px;
+    width: 550px;
+    height: 390px;
+}
+
+.main-slider ul {
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+
+}
+
+.main-slider ul li {
+    float: left;
+    width: 8px;
+    height: 8px;
+    color: #fff;
+    background-color: #3E3E3E;
+    border-radius: 50%;   /*圆角矩形*/
+    line-height: 18px;
+    text-align: center;  /*让 li 里面的文本水平方向居中*/
+    margin: 0 2px;
+    cursor: pointer;   /*鼠标悬停时变成小手*/
+}
+
+.main-slider .arrow-left {  /* 轮播图左侧的箭头*/
+    position: absolute;
+    top: 50%;
+    margin-top: -31px;
+    left: 0px;
+    width: 28px;
+    height: 62px;
+    background-color: rgba(0,0,0,0.3);
+    color: #fff;
+    font: 400 22px/62px "sumsun";
+    text-align: center;
+    border-radius: 10px 0 0 10px;
+}
+
+.main-slider .arrow-left:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.main-slider .arrow-right {  /*轮播图右侧的箭头*/
+    position: absolute;
+    top: 50%;
+    margin-top: -31px;
+    right: 0px;
+    width: 28px;
+    height: 62px;
+    background-color: pink;
+    background-color: rgba(0,0,0,0.3);
+    color: #fff;
+    font: 400 22px/62px "sumsun";
+    text-align: center;
+    border-radius: 10px 0 0 10px;
+}
+
+.main-slider .arrow-right:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.main-cb{
+    position: absolute;
+    float: left;
+    margin: -390px 0px 0px 770px;
+    width: 190px;
+    height: 0px;
+}
+
+.cb-li{
+    height: 390px;
+    list-style: none;
+}
+
+.cb-li-div{
+    vertical-align: top;
+    display: inline-block;
+    width: 190px;
+}
+.cb-img{
+    width: 160px;
+    margin-bottom: 7px;
+    margin-left: 15px;
+}
+
+/*und*/
+.slider-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.main-qk{
+    width: 190px;
+    height: 390px;
+    position: absolute;
+    float: left;
+    margin: -390px 0px 0px 960px;
+}
+
+.qk1{
+    width: 190px;
+    height: 100px;
+    background: #fff;
+    position: absolute;
+    border-bottom: #999 1px solid;
+}
+
+.qk1-bor{
+    position: absolute;
+    left: 20px;
+    top: 13px;
+    width: 44px;
+    height: 44px;
+}
+
+.qk-img{
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.qk1-text{
+    position: absolute;
+    top: 16px;
+    left: 74px;
+}
+
+.qk1-but{
+    position:relative;
+    height: 25px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.qk1-but-a1{
+    display: inline-block;
+    margin: 0 5px;
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    border-radius: 13px;
+    background: #e1251b;
+}
+
+.qk1-but-a2{
+    background: #363634;
+    color: #e5d790;
+    display: inline-block;
+    margin: 0 5px;
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 13px;
+}
+
+.qk2{
+    height: 120px;
+    position:absolute;
+    margin-top: 110px;
+    width: 190px;
+    border-bottom: #999 1px solid;
+}
+
+.qk2-hd{
+    height: 20px;
+    
+}
+
+.qk2-hd-tit{
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+.qk2-hd-more{
+    position:absolute;
+    top: 2px;
+    right: 15px;
+}
+
+.qk2-body{
+    height: 70px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.qk2-body span{
+    display: inline-block;
+    position: relative;
+    font-size: 12px;
+    height: 16px;
+    width: 35px;
+    line-height: 16px;
+    text-align: center;
+    color: #e1251b;
+    background-color: rgba(225,37,27,.08);
+    margin-right: 6px;
+}
+
+.qk2-body li{
+    max-width: 160px;
+    height: 16px;
+    line-height: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #999;
+    margin-bottom: 6px;
+}
+
+.qk3{
+    height: 165px;
+    position:absolute;
+    width: 190px;
+    margin-top: 235px;
+}
+
+.qk3-li1{
+    margin-top: 2px;
+    position: relative;
+    float: left;
+    width: 63px;
+    height: 55px;
+    background: #fff;
+    text-align: center;
+}
+
+.qk3 a{
+    display: block;
+}
+
+.qk3 span{
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: 2px solid #fff;
+    color: #333;
+}
+
+.qk3-img{
+    width: 28px;
+    height: 28px;
+}
+
+/*底部*/
+
+.bot-ser{
+    margin-top: 10px;
+    border-top: 1px solid #E5E5E5;
+    height: 100px;
+}
+
+.bot-ser ul{
+    margin-top: 30px;
+}
+
+.bot-ser-li1{
+    position: absolute;
+    margin: 0 auto;
+    padding-left: 50px;
+    width: 180px;
+}
+
+.bot-ser-li2{
+    position: absolute;
+    margin: 0 auto;
+    padding-left: 350px;
+    width: 180px;
+}
+.bot-ser-li3{
+    position: absolute;
+    margin: 0 auto;
+    padding-left: 650px;
+    width: 180px;
+}
+.bot-ser-li4{
+    position: absolute;
+    margin: 0 auto;
+    padding-left: 950px;
+    width: 180px;
+}
+
+.bot-h51{
+    background-repeat: no-repeat;
+    background-image: url(../figures/bot.png);
+    background-position: 0 -192px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 36px;
+    height: 42px;
+    text-indent: -999px;
+}
+
+.bot-h52{
+    background-repeat: no-repeat;
+    background-image: url(../figures/bot.png);
+    background-position: -41px -192px;
+    overflow: hidden;
+    position: absolute;
+    left: 300px;
+    top: 0;
+    width: 36px;
+    height: 42px;
+    text-indent: -999px;
+}
+
+.bot-h53{
+    background-repeat: no-repeat;
+    background-image: url(../figures/bot.png);
+    background-position: -82px -192px;
+    overflow: hidden;
+    position: absolute;
+    left: 600px;
+    top: 0;
+    width: 36px;
+    height: 42px;
+    text-indent: -999px;
+}
+
+.bot-h54{
+    background-repeat: no-repeat;
+    background-image: url(../figures/bot.png);
+    background-position: -123px -192px;
+    overflow: hidden;
+    position: absolute;
+    left: 900px;
+    top: 0;
+    width: 36px;
+    height: 42px;
+    text-indent: -999px;
+}
+
+.bot-ser span{
+    overflow: hidden;
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    font-size: 18px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #444;
+}
+
+.footer-shopping {
+    margin-top: 16px;  /*和上方保持距离*/
+    border-top: 1px solid #E5E5E5;
+}
+.footer-shopping dl{
+    float: left;
+    width: 200px;
+}
+
+.footer-shopping dt{
+    height: 34px;
+    font: 400 16px/34px "microsoft yahei";
+}
+.footer-shopping dd{
+    line-height: 20px;
+}
+
+.help_cover{
+    float: right;
+    width: 200px;
+    height: 100px;
+    margin-top: 6px;
+}
+
+.help dt {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.help_cover h5{
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "microsoft yahei";
+}
+
+.help_cover a{
+    float: right;
+}
+
+/*最底部start*/
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;  /*让文字在容器中水平方向居中*/
+    padding: 20px 0 30px;
+    border-top: 1px solid #E5E5E5;
+}
+
+.footer-bottom .footer-about a{
+    margin: 0 10px;
+}
+
+.footer-copyright {
+    padding: 10px 0;
+}
+
+.footer-bottom-img a {
+    margin: 0 5px;
+}
+/*最底部end*/
+
